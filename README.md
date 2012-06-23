@@ -24,24 +24,24 @@ No browser verificar se ao digitar a url `http://datamapper.local` é retornada 
 `mysql -u root -p  < docs/exemplo.sql`
 
 ## Criar as models
-`zf create model Categoria`
-`zf create model Produto`
+* `zf create model Categoria`
+* `zf create model Produto`
 
 ## Criar os mappers
-`zf create model CategoriaMapper`
-`zf create model ProdutoMapper`
+* `zf create model CategoriaMapper`
+* `zf create model ProdutoMapper`
 
 ## Criar as DbTables
-`zf create dbtable Categoria categorias`
-`zf create dbtable Produto produtos`
+* `zf create dbtable Categoria categorias`
+* `zf create dbtable Produto produtos`
 
 ## Criar os controladores
-`zf create controller Categoria`
-`zf create controller Produto`
+* `zf create controller Categoria`
+* `zf create controller Produto`
 
 ## Criar os formulários
-`zf create form Categoria`
-`zf create form Produto`
+* `zf create form Categoria`
+* `zf create form Produto`
 
 ## Carregar automaticamente as bibliotecas abstratas
 No bootstrap, dentro do método initAutoloader deve conter a chamada para o método `registerNamespace('MeuProjeto')` para que ele possa carregar automaticamente as bibliotecas abstradas, como o controlador, form, model e o mapper.
