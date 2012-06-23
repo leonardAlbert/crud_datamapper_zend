@@ -5,7 +5,7 @@ Promover a padronização de desenvolvimento dos projetos da *Fundação Casper 
 Este exemplo tem como base de uso o *Zend Framework 1.11.11*.
 
 ## Criar o projeto.
-`zf create project datamapper`
+* `zf create project datamapper`
 
 ## Library Zend Framework
 Copiar a biblioteca do *Zend Framework* para dentro da pasta library de seu projeto.
@@ -14,14 +14,14 @@ Copiar a biblioteca do *Zend Framework* para dentro da pasta library de seu proj
 Criar um virtualhost seguindo o exemplo existente em datamapper *datamapper/docs/READ.txt*.
 
 ## Criar uma entrada em /etc/hosts
-`127.0.0.1 datamapper.local`
+* `127.0.0.1 datamapper.local`
 No browser verificar se ao digitar a url `http://datamapper.local` é retornada a mensagem padrão do Zend Framework, na qual, este encontra-se pronto para o uso.
 
 ## Configurar o Banco de dados
-`zf configure dbadapter "adapter=Pdo_MySQL&host=localhost&username=root&password=root&dbname=exemplo"`
+* `zf configure dbadapter "adapter=Pdo_MySQL&host=localhost&username=root&password=root&dbname=exemplo"`
 
 ## Importação da estrutura do banco de dados
-`mysql -u root -p  < docs/exemplo.sql`
+* `mysql -u root -p  < docs/exemplo.sql`
 
 ## Criar as models
 * `zf create model Categoria`
