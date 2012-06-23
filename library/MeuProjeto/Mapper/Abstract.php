@@ -8,7 +8,7 @@
  * 
  * @package 	MeuProjeto
  * @subpackage	Mapper
- * @author 		Thiago Pelizoni <thiago.pelizoni@gmail.com>
+ * @author 	Thiago Pelizoni <thiago.pelizoni@gmail.com>
  * @license 	http://www.gnu.org/copyleft/gpl.html GNU General Public License
  * @version 	Release: 0.1
 */
