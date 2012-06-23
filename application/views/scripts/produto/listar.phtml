@@ -1,0 +1,35 @@
+<h1>Produtos</h1>
+
+<?php if ($this->registros != null): ?>
+    <table class="table table-bordered">
+	    <thead>
+		    <tr>
+			    <th>Nome</th>
+			    <th>Descrição</th>
+			    <th>Categoria</th>
+			    <th>Opções</th>
+		    </tr>
+	    </thead>
+	    <tbody>
+	    <?php foreach ($this->registros as $produto): ?>
+		    <tr>
+			    <td><?= $produto->getNome(); ?></td>
+			    <td><?= $produto->getDescricao(); ?></td>
+			    <td><?= $produto->getCategoria(true)->getNome(); ?></td>
+			    <td>
+			    	<a href="/produto/alterar/id/<?= $produto->getId(); ?>" class="btn">Alterar</a>
+			    	<a href="/produto/excluir/id/<?= $produto->getId(); ?>" class="btn btn-danger" id="excluir">Excluir</a>
+			    </td>
+		    </tr>
+	    <?php endforeach; ?>
+	    </tbody>
+    </table>
+<?php else: ?>
+	<div class="alert"><strong>Aviso!</strong> Nenhum produto cadastrado</div>
+<?php endif; ?>
+
+<a href="/produto/cadastrar" class="btn-large btn-primary">Cadastrar</a>
+
+<script type="text/javascript">
+	Registro.excluir();
+</script>

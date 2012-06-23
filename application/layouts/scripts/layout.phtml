@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	
+	<link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.js"></script>
+	<script src="/js/application.js"></script>
+	
+	<style type="text/css">
+		body {
+			padding-top: 60px;
+			padding-bottom: 40px;
+		}
+	</style>
+	<!--[if lt IE 9]>
+	      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<title>Exemplo de Zend Framework utilizando DataMapper</title>
+</head>
+
+<body>
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+        	<div class="container">
+          		<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+           	 		<span class="icon-bar"></span>
+            		<span class="icon-bar"></span>
+            		<span class="icon-bar"></span>
+          		</a>
+          		<a class="brand" href="#">DataMapper</a>
+          		<div class="nav-collapse">
+		            <ul class="nav">
+		              	<li class="active"><a href="#">Home</a></li>
+		             	 <li><a href="/categoria">Categorias</a></li>
+		              	<li><a href="/produto">Produtos</a></li>
+		            </ul>
+          		</div>
+        	</div>
+      	</div>
+    </div>
+
+	<div class="container">
+		<div class="hero-unit">
+			<h1>Exemplo: DataMapper</h1>
+			<p>Este é um exemplo de como utilizar o padrão DataMapper com o Zend Framework, podendo assim utilizar orientação a objetos de forma correta e coerente.</p>
+		</div>
+		
+		<?php $session = Zend_Registry::get('session'); ?>
+	
+		<?php if ($session->error != null) : ?>
+		<div class="alert alert-error">
+			<strong>Ocorreu um erro!</strong>
+			<?php echo $session->error; ?>
+		</div>
+		<?php endif; ?>
+	
+		<?php if ($session->success != null) : ?>
+		<div class="alert alert-success">
+			<strong>Sucesso!</strong>
+			<?php echo $session->error; ?>
+		</div>
+		<?php endif; ?>
+		
+		<?php unset($session->error); ?>
+		<?php unset($session->success); ?>
+		
+		<div class="row">
+			<div class="span12">
+				<?php echo $this->layout()->content; ?>
+			</div>
+		</div>
+	</div>
+	
+</body>
+
+</html>

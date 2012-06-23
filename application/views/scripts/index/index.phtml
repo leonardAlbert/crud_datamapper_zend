@@ -1,0 +1,41 @@
+<h1>Instruções</h1>
+
+<p>Este exemplo tem como base de uso o Zend Framework 1.11.11.</p>
+
+<h3>Criar o projeto.</h3>
+<p>zf create project datamapper</p>
+
+Copiar a biblioteca do Zend Framework para dentro da pasta library de seu projeto.
+
+Criar um virtualhost seguindo o exemplo existente em datamapper/docs/READ.txt
+
+Criar uma entrada em /etc/hosts: 
+127.0.0.1 datamapper.local
+
+Configurar o Banco de dados
+zf configure dbadapter "drive=Pdo_MySQL&host=localhost&username=root&password=root&dbname=exemplo"
+
+No browser verificar se ao digitar a url "http://datamapper.local" é retornada a mensagem padrão do Zend Framework, na qual, este encontra-se pronto para o uso.
+
+Criar as models:
+zf create model Categoria
+zf create model Produto
+
+Criar os mappers:
+zf create model CategoriaMapper
+zf create model ProdutoMapper
+
+Criar as DbTables:
+zf create dbtable Categoria categorias
+zf create dbtable Produto produtos
+
+Criar os controladores:
+zf create controller Categoria
+zf create controller Produto
+
+Criar os formulários:
+zf create form Categoria
+zf create form Produto
+
+No bootstrap, dentro do método initAutoloader deve conter a chamada para o método registerNamespace('MeuProjeto') para ele carregar as bibliotecas abstradas, como o controlador, model e o mapper.
+

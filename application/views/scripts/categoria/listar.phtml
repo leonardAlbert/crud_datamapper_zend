@@ -1,0 +1,33 @@
+<h1>Categorias</h1>
+
+<?php if ($this->registros != null): ?>
+    <table class="table table-bordered">
+	    <thead>
+		    <tr>
+			    <th>Nome</th>
+			    <th>Descrição</th>
+			    <th>Opções</th>
+		    </tr>
+	    </thead>
+	    <tbody>
+	    <?php foreach ($this->registros as $categoria): ?>
+		    <tr>
+			    <td><?= $categoria->getNome(); ?></td>
+			    <td><?= $categoria->getDescricao(); ?></td>
+			    <td>
+			    	<a href="/categoria/alterar/id/<?= $categoria->getId(); ?>" class="btn">Alterar</a>
+			    	<a href="/categoria/excluir/id/<?= $categoria->getId(); ?>" class="btn btn-danger" id="excluir">Excluir</a>
+			    </td>
+		    </tr>
+	    <?php endforeach; ?>
+	    </tbody>
+    </table>
+<?php else: ?>
+	<div class="alert"><strong>Aviso!</strong> Nenhuma categoria cadastrada</div>
+<?php endif; ?>
+
+<a href="/categoria/cadastrar" class="btn-large btn-primary">Cadastrar</a>
+
+<script type="text/javascript">
+	Registro.excluir();
+</script>
